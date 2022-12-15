@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/animate.css">
+  <link rel="stylesheet" href="./assets/css/nameafterlogin.css">
+  <link rel="icon" type="image/x-icon" href="./CTU.svg">
+  <title>CTU Multimedia</title>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light pb-0">
+      <div class="container">
+        <a class="navbar-brand" href="javascript:void(0)">
+          <img src="assets/img/logo/logo.jpg" alt="Logo" style="width:250px;">
+        </a>
+
+        <div class="navbar-collapse">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)"></a>
+            </li>
+          </ul>
+          <ul class="navbar-nav d-flex">
+            <li class="nav-item">
+              <a class="nav-link" href="http://www.cit.ctu.edu.vn/">CIT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://elearning.ctu.edu.vn/">E-Learning</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://elcit.ctu.edu.vn/course/resources.php?id=1">Lịch thực hành</a>
+            </li>
+
+            <!--SEARCH-->
+            <form class="me-2">
+              <input class="form-control" type="search" placeholder="Tìm kiếm" list="timkiem" id="search"
+                onchange="openSearch()" autocomplete="off">
+              <datalist id="timkiem" class="find">
+                <option value="Trang Chu"></option>
+                <option value="Gioi Thieu"></option>
+                <option value="Tin tuc"></option>
+                <option value="Chuong trinh dai hoc"></option>
+                <option value="Chuong trinh sau dai hoc"></option>
+                <option value="Chuong trinh vua lam vua hoc"></option>
+                <option value="Tuyen sinh dai hoc"></option>
+                <option value="Tuyen sinh sau dai hoc"></option>
+                <option value="Tuyen sinh vua lam vua hoc"></option>
+                <option value="Quy che tuyen sinh"></option>
+                <option value="Nghien cuu"></option>
+                <option value="Tap chi khoa hoc"></option>
+                <option value="Bo mon Tin hoc ung dung"></option>
+                <option value="Bo mon Truyen thong da phuong tien"></option>
+                <option value="Bo mon Cong nghe truyen thong"></option>
+                <option value="Lien he"></option>
+              </datalist>
+            </form>
+
+            <!--NUT DANG NHAP-->
+            <div class="text-end">
+
+              <!-- THEM TEN SAU KHI LOGIN -->
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" id="exit-submenu" style="display: none;">
+                <li class="nav-item dropdown">
+                  <a id="drop-icon" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false" style="display: block;">
+                    <span id="full-name">Thien Nhan</span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="profile.html">Hồ sơ cá nhân</a></li>
+                    <hr style="margin: 1px">
+                    <li><a class="dropdown-item" href="admin.html">Bài viết</a></li>
+                    <li><a class="dropdown-item" href="changepw.html">Đổi mật khẩu</a></li>
+                    <hr style="margin: 1px">
+                    <li><a class="dropdown-item" href="#" id="exit-index">Đăng xuất</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+              <a href="./login.html" class="btn btn-primary me-2" role="button" id="login-index"
+                style="display: block;">Đăng
+                nhập</a>
+            </div>
+          </ul>
+        </div>
+        <!--KET THUC NUT DANG NHAP-->
+
+      </div>
+    </nav>
+
+    <div class="main__menu-block"></div>
+    <div class="navbar navbar-expand-sm navbar-light bg-light pt-0 ms-2">
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar"
+        aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <div class="navbar navbar-expand-sm navbar-dark main__menu-block" id="mymenu">
+      <div class="container">
+
+        <div class="navbar-collapse collapse" id="mynavbar">
+          <!-- Links -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Trang chủ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="gioithieu.html">Giới thiệu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="listNews.html">Tin tức</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Đào
+                tạo</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="daotao.html">Chương trình đại học</a></li>
+                <li><a class="dropdown-item" href="daotaosau.html">Chương trình sau đại học</a></li>
+                <li><a class="dropdown-item" href="vualamvuahoc.html">Chương trình vừa làm vừa học</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Tuyển
+                sinh</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="tuyensinh.html">Đại học</a></li>
+                <li><a class="dropdown-item" href="tuyensinhsau.html">Sau đại học</a></li>
+                <li><a class="dropdown-item" href="tuyensinhvlvh.html">Vừa làm vừa học</a></li>
+                <li><a class="dropdown-item" href="quychetuyensinh.html">Quy chế tuyển sinh</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Nghiên
+                cứu</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="nghiencuu.html">Các đề tài NCKH</a></li>
+                <li><a class="dropdown-item" href="tapchi.html">Tạp chí khoa học</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Đơn
+                vị</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="donvi1.html">Bộ môn Tin học ứng dụng</a></li>
+                <li><a class="dropdown-item" href="donvi2.html">Bộ môn Truyền thông đa phương tiện</a>
+                </li>
+                <li><a class="dropdown-item" href="donvi3.html">Bộ môn Công nghệ truyền thông</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="lienhe.html">Liên hệ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Present -->
+    <div class="present container mt-2">
+      <!-- Breadcrumb -->
+      <div class="breadcrumb mt-4">
+        <div
+          style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+          aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Đơn vị</li>
+            <li class="breadcrumb-item active" aria-current="page">Bộ môn Công nghệ truyền thông</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1 class="text-primary">BỘ MÔN CÔNG NGHỆ TRUYỀN THÔNG</h1>
+      <p class="text-justify">
+        <span class="text-info">Bộ môn Công nghệ truyền thông</span> được thành lập năm 1996, thuộc Khoa Công nghệ Thông tin
+        và Truyền thông, trường Đại học Cần Thơ.
+        <br>
+        <br>
+        <span class="text-danger">Nhiệm vụ:</span> Bộ môn đào tạo Kỹ sư Truyền thông đa phương tiện và Kỹ sư Công nghệ
+        thông tin chuyên ngành Công nghệ truyền thông. Ngoài ra, Bộ môn còn đảm nhận giảng dạy các học phần Công nghệ truyền thông
+        và học phần Tin học căn bản cho các ngành đào tạo khác của Trường Đại học Cần Thơ.
+        <br>
+        <br>
+        Hiện tại, Bộ môn Công nghệ truyền thông có 16 Giảng viên, trong đó có 05 Giảng viên có trình độ Tiến sĩ.
+      </p>
+      <div class="container marketing my-5 py-5">
+
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+          <div class="col-lg-3">
+            <img src="assets/img/profile1.png" alt="." height="150px" style="border-radius:50%">
+            <h4 class="fw-normal">TS. GVC. Nguyễn Hữu Hòa</h4>
+            <br>
+            <p class="text-danger">Trưởng khoa</p>
+            <p>Trình độ chuyên môn: Tiến sỹ.<br>Đơn vị công tác: Khoa Truyền thông đa phương tiện</p>
+            <p><a href="" style="text-decoration: none;" class="fas fa-envelope"></a> nhhoa@ctu.edu.vn</p>
+            <p><a class="btn btn-secondary"
+                href="https://qldiem.ctu.edu.vn/htql/canbo/llkh/codes/LyLichKhoaHoc_in.php?macb=001048">Xem
+                thêm &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-3">
+            <img src="assets/img/profile.jpg" alt="." height="150px" style="border-radius:50%">
+            <h4 class="fw-normal">TS. GVC. Nguyễn Nhị Gia Vinh</h4>
+            <p class="text-danger">Trưởng bộ môn</p>
+            <p>Trình độ chuyên môn: Tiến sỹ.<br>Đơn vị công tác: Khoa Truyền thông đa phương tiện</p>
+            <p><a href="" style="text-decoration: none;" class="fas fa-envelope"></a> nngvinh@ctu.edu.vn</p>
+            <p><a class="btn btn-secondary"
+                href="https://qldiem.ctu.edu.vn/htql/canbo/llkh/codes/LyLichKhoaHoc_in.php?macb=001044">Xem
+                thêm &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-3">
+            <img src="assets/img/th.jpg" alt="." height="150px" style="border-radius:50%">
+            <h4 class="fw-normal">ThS. GVC. Hồ Văn Tú</h4>
+            <br>
+            <p class="text-danger">Phó Trưởng bộ môn</p>
+            <p>Trình độ chuyên môn: Thạc sỹ.<br>Đơn vị công tác: Khoa Truyền thông đa phương tiện</p>
+            <p><a href="" style="text-decoration: none;" class="fas fa-envelope"></a> hvtu@ctu.edu.vn</p>
+            <p><a class="btn btn-secondary"
+                href="https://qldiem.ctu.edu.vn/htql/canbo/llkh/codes/LyLichKhoaHoc_in.php?macb=001603">Xem
+                thêm &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-3">
+            <img src="assets/img/businesswoman-character-avatar-icon-vector-12800169.jpg" alt="." height="150px"
+              style="border-radius:50%">
+            <h4 class="fw-normal">TS. Phạm Trương Hồng Ngân</h4>
+            <br>
+            <p></p>
+            <p>Trình độ chuyên môn: Tiến sỹ.<br>Đơn vị công tác: Khoa Truyền thông đa phương tiện</p>
+            <p><a href="" style="text-decoration: none;" class="fas fa-envelope"></a> pthngan@ctu.edu.vn </p>
+            <p><a class="btn btn-secondary"
+                href="https://qldiem.ctu.edu.vn/htql/canbo/llkh/codes/LyLichKhoaHoc_in.php?macb=002454">Xem
+                thêm &raquo;</a></p>
+          </div>
+          <div class="col-lg-3">
+            <img src="assets/img/8b167af653c2399dd93b952a48740620 (1).jpg" alt="." height="150px"
+              style="border-radius:50%">
+            <h4 class="fw-normal">TS. Trần Hoàng Việt</h4>
+            <p>Trình độ chuyên môn: Tiến sỹ.<br>Đơn vị công tác: Tổ Phần mềm</p>
+            <br>
+            <p><a href="" style="text-decoration: none;" class="fas fa-envelope"></a> thviet@ctu.edu.vn</p>
+            <p><a class="btn btn-secondary"
+                href="https://qldiem.ctu.edu.vn/htql/canbo/llkh/codes/LyLichKhoaHoc_in.php?macb=001455">Xem
+                thêm &raquo;</a></p>
+          </div>
+          <div class="col-lg-3">
+            <img src="assets/img/profile.jpg" alt="." height="150px" style="border-radius:50%">
+            <h4 class="fw-normal">TS. Bùi Quốc Chính </h4>
+            <p>Trình độ chuyên môn: Tiến sỹ.<br>Đơn vị công tác: Khoa Truyền thông đa phương tiện</p>
+            <p><a href="" style="text-decoration: none;" class="fas fa-envelope"></a> bqchinh@ctu.edu.vn</p>
+            <p><a class="btn btn-secondary"
+                href="https://qldiem.ctu.edu.vn/htql/canbo/llkh/codes/LyLichKhoaHoc_in.php?macb=001039">Xem
+                thêm &raquo;</a></p>
+          </div>
+          <div class="col-lg-3">
+            <img src="assets/img/8b167af653c2399dd93b952a48740620 (1).jpg" alt="." height="150px"
+              style="border-radius:50%">
+            <h4 class="fw-normal">ThS. GVC. Vũ Duy Linh</h4>
+            <p>Trình độ chuyên môn: Thạc sỹ.<br>Đơn vị công tác: Khoa Truyền thông đa phương tiện</p>
+            <p><a href="" style="text-decoration: none;" class="fas fa-envelope"></a> vdlinh@ctu.edu.vn</p>
+            <p><a class="btn btn-secondary"
+                href="https://qldiem.ctu.edu.vn/htql/canbo/llkh/codes/LyLichKhoaHoc_in.php?macb=001042">Xem
+                thêm &raquo;</a></p>
+          </div>
+          <div class="col-lg-3">
+            <img src="assets/img/profile.jpg" alt="." height="150px" style="border-radius:50%">
+            <h4 class="fw-normal">ThS. GVC. Nguyễn Đức Khoa</h4>
+            <p>Trình độ chuyên môn: Thạc sỹ.<br>Đơn vị công tác: Khoa Truyền thông đa phương tiện</p>
+            <p><a href="" style="text-decoration: none;" class="fas fa-envelope"></a> duckhoa@ctu.edu.vn</p>
+            <p><a class="btn btn-secondary"
+                href="https://qldiem.ctu.edu.vn/htql/canbo/llkh/codes/LyLichKhoaHoc_in.php?macb=001112">Xem
+                thêm &raquo;</a></p>
+          </div>
+          <div class="col-lg-3">
+            <img src="assets/img/th.jpg" alt="." height="150px" style="border-radius:50%">
+            <h4 class="fw-normal">ThS. GVC. Hoàng Minh Trí</h4>
+            <br>
+            <p>Trình độ chuyên môn: Thạc sỹ.<br>Đơn vị công tác: Khoa Truyền thông đa phương tiện</p>
+            <p><a href="" style="text-decoration: none;" class="fas fa-envelope"></a> hmtri@ctu.edu.vn</p>
+            <p><a class="btn btn-secondary"
+                href="https://qldiem.ctu.edu.vn/htql/canbo/llkh/codes/LyLichKhoaHoc_in.php?macb=001169">Xem
+                thêm &raquo;</a></p>
+          </div>
+          <div class="col-lg-3">
+            <img src="assets/img/6415360_account_avatar_profile_user_icon.png" alt="." height="150px"
+              style="border-radius:50%">
+            <h4 class="fw-normal">ThS. GVC. Lê Thị Diễm</h4>
+            <br>
+            <p>Trình độ chuyên môn: Thạc sỹ.<br>Đơn vị công tác: Khoa Truyền thông đa phương tiện</p>
+            <p><a href="" style="text-decoration: none;" class="fas fa-envelope"></a> ltdiem@ctu.edu.vn</p>
+            <p><a class="btn btn-secondary"
+                href="https://qldiem.ctu.edu.vn/htql/canbo/llkh/codes/LyLichKhoaHoc_in.php?macb=001322">Xem
+                thêm &raquo;</a></p>
+          </div>
+          <div class="col-lg-3">
+            <img src="assets/img/6893559.png" alt="." height="150px" style="border-radius:50%">
+            <h4 class="fw-normal">ThS. GVC. Nguyễn Thị Thùy Linh</h4>
+            <p>Trình độ chuyên môn: Thạc sỹ.<br>Đơn vị công tác: Khoa Truyền thông đa phương tiện</p>
+            <p><a href="" style="text-decoration: none;" class="fas fa-envelope"></a> nttlinh@ctu.edu.vn</p>
+            <p><a class="btn btn-secondary"
+                href="https://qldiem.ctu.edu.vn/htql/canbo/llkh/codes/LyLichKhoaHoc_in.php?macb=001170">Xem
+                thêm &raquo;</a></p>
+          </div>
+          <div class="col-lg-3">
+            <img src="assets/img/profile.jpg" alt="." height="150px" style="border-radius:50%">
+            <h4 class="fw-normal">ThS. GVC. Huỳnh Phụng Toàn</h4>
+            <p>Trình độ chuyên môn: Thạc sỹ.<br>Đơn vị công tác: Khoa Truyền thông đa phương tiện</p>
+            <p><a href="" style="text-decoration: none;" class="fas fa-envelope"></a> hptoan@ctu.edu.vn</p>
+            <p><a class="btn btn-secondary"
+                href="https://qldiem.ctu.edu.vn/htql/canbo/llkh/codes/LyLichKhoaHoc_in.php?macb=001602">Xem
+                thêm &raquo;</a></p>
+          </div>
+          <div class="col-lg-3">
+            <img src="assets/img/profile1.png" alt="." height="150px" style="border-radius:50%">
+            <h4 class="fw-normal">ThS. GVC. Võ Hải Đăng </h4>
+            <p>Trình độ chuyên môn: Thạc sỹ.<br>Đơn vị công tác: Khoa Truyền thông đa phương tiện</p>
+            <p><a href="" style="text-decoration: none;" class="fas fa-envelope"></a> vhdang@ctu.edu.vn</p>
+            <p><a class="btn btn-secondary"
+                href="https://qldiem.ctu.edu.vn/htql/canbo/llkh/codes/LyLichKhoaHoc_in.php?macb=002302">Xem
+                thêm &raquo;</a></p>
+          </div>
+          <div class="col-lg-3">
+            <img src="assets/img/8b167af653c2399dd93b952a48740620 (1).jpg" alt="." height="150px"
+              style="border-radius:50%">
+            <h4 class="fw-normal">ThS. Lê Minh Lý </h4>
+            <p>Trình độ chuyên môn: Thạc sỹ.<br>Đơn vị công tác: Khoa Truyền thông đa phương tiện</p>
+            <p><a href="" style="text-decoration: none;" class="fas fa-envelope"></a> leminhly@ctu.edu.vn</p>
+            <p><a class="btn btn-secondary"
+                href="https://qldiem.ctu.edu.vn/htql/canbo/llkh/codes/LyLichKhoaHoc_in.php?macb=002301">Xem
+                thêm &raquo;</a></p>
+          </div>
+          <div class="col-lg-3">
+            <img src="assets/img/219990.png" alt="." height="150px" style="border-radius:50%">
+            <h4 class="fw-normal">ThS. Đặng Mỹ Hạnh</h4>
+            <p>Trình độ chuyên môn: Thạc sỹ.<br>Đơn vị công tác: Khoa Truyền thông đa phương tiện</p>
+            <p><a href="" style="text-decoration: none;" class="fas fa-envelope"></a> dmhanh@ctu.edu.vn</p>
+            <p><a class="btn btn-secondary"
+                href="https://qldiem.ctu.edu.vn/htql/canbo/llkh/codes/LyLichKhoaHoc_in.php?macb=002395">Xem
+                thêm &raquo;</a></p>
+          </div>
+          <div class="col-lg-3">
+            <img src="assets/img/profile.jpg" alt="." height="150px" style="border-radius:50%">
+            <h4 class="fw-normal">ThS. Lê Văn Quan</h4>
+            <p>Trình độ chuyên môn: Thạc sỹ.<br>Đơn vị công tác: Khoa Truyền thông đa phương tiện</p>
+            <p><a href="" style="text-decoration: none;" class="fas fa-envelope"></a> lvquan@ctu.edu.vn</p>
+            <p><a class="btn btn-secondary"
+                href="https://qldiem.ctu.edu.vn/htql/canbo/llkh/codes/LyLichKhoaHoc_in.php?macb=002455">Xem
+                thêm &raquo;</a></p>
+          </div>
+        </div><!-- /.row -->
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+
+          <h3 class="featurette-heading fw-normal lh-1"><span class="text-danger">Tầm nhìn</span></h3>
+          <p class="lead">Trong những năm tiếp theo, cùng với sự phát triển không ngừng của lĩnh vực công nghệ thông tin
+            toàn cầu, Bộ môn Công nghệ truyền thông là đơn vị đào tạo uy tín, chất lượng ngành Truyền thông đa phương tiện và
+            chuyên ngành Công nghệ truyền thông cùng với phát triển nghiên cứu khoa học, chuyển giao công nghệ về lĩnh vực
+            công nghệ thông tin nhằm đáp ứng nhu cầu về nhân lực công nghệ thông tin ở vùng Đồng bằng Sông Cửu Long nói
+            riêng và cả nước nói chung.</p>
+          <p><a class="btn btn-secondary" href="http://cit.ctu.edu.vn/training/ct_chuyendoi/K48/D_V2_7320104_TruyenThongDaPhuongTien.pdf">Xem thêm &raquo;</a></p>
+
+
+          <img src="assets/img/550730647.png" alt="." height="500px">
+
+        </div>
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+
+          <h3 class="featurette-heading fw-normal lh-1"><span class="text-danger">Về đào tạo</span></h3>
+          <p class="lead"> <span class="text-primary"> Bộ môn Công nghệ truyền thông </span>chịu trách nhiệm đào tạo <span
+              class="text-danger">Kỹ sư ngành Truyền thông đa phương tiện và Kỹ sư Công nghệ thông tin chuyên ngành Tin
+              học ứng dụng.</span>Người học có thể tham khảo <span class="text-danger">chương trình đào tạo của ngành
+              Truyền thông đa phương tiện</span><a
+              href="http://cit.ctu.edu.vn/training/ct_chuyendoi/K48/D_V2_7320104_TruyenThongDaPhuongTien.pdf"> tại
+              đây.</a></p>
+          <p><a class="btn btn-secondary" href="http://cit.ctu.edu.vn/training/ct_chuyendoi/K48/D_V2_7320104_TruyenThongDaPhuongTien.pdf">Xem thêm &raquo;</a></p>
+
+          <img src="assets/img/dao-tao-nhan-vien-quan-ly-quan-ca-phe-nhu-the-nao-hieu-qua-4.jpg" alt="." height="500px">
+        </div>
+        <div class="row featurette">
+          <h6 class="featurette-heading fw-normal lh-1">Đặc biệt, <span class="text-primary"> Kỹ sư ngành Truyền thông
+              đa phương tiện </span>có khả năng:</h6>
+        </div>
+        <div class="row featurette">
+          <div class="col-md-7">
+
+            <p class="lead">Ứng dụng các công nghệ thiết kế nhãn hiệu sản phẩm, thiết kế logo, làm phim quảng cáo,… hoặc
+              một hệ thống nhận dạng thương hiệu (tại các công ty quảng cáo, PR)</p>
+
+          </div>
+          <div class="col-md-5">
+            <img src="assets/img/z3951777061318_368d3e0d7d9128ab963c285401f6e2c1.jpg" alt="." height="300px">
+          </div>
+        </div>
+        <div class="row featurette">
+          <div class="col-md-7">
+
+            <p class="lead">Ứng dụng các công nghệ xử lý âm thanh, hình ảnh, thiết kế các nội dung truyền hình.
+            </p>
+
+          </div>
+          <div class="col-md-5">
+            <img src="assets/img/cong-nghe-thong-tin-va-truyen-thong-la-gi-co-hoi-viec-lam-01.jpg" alt="."
+              height="230px">
+          </div>
+        </div>
+        <div class="row featurette">
+          <div class="col-md-7">
+
+            <p class="lead">Ứng dụng các kỹ thuật lập trình Java, .NET, C#, .... , các công nghệ thiết kế và lập trình
+              Web hiện đại để phát triển các hệ thống Website trực tuyến, các ứng dụng di động
+            </p>
+
+          </div>
+          <div class="col-md-5">
+            <img src="assets/img/z3951818063556_1c7096c8dd555d02eb8200a80b58f4df.jpg" alt="." height="234px">
+          </div>
+        </div>
+        <div class="row featurette">
+          <p>Người học được trải nghiệm thực tế tại công ty có bộ phận tin học, bộ phận truyền thông; được đào tạo các
+            kỹ năng giao tiếp, thảo luận và làm việc nhóm; được cung cấp các kiến thức thực tế về công nghệ thông tin và
+            truyền thông qua các khóa học do các chuyên gia trong và ngoài nước giảng dạy.</p>
+        </div>
+        <div class="row featurette">
+          <p>Sau khi tốt nghiệp đại học, người học có thể đảm nhận các vị trí như kỹ sư thiết kế, lập trình phần mềm;
+            phát triển các ứng dụng ứng dụng Web, ứng dụng trên thiết bị di động; chuyên viên tổ chức sự kiện, chuyên
+            viên truyền thông; chuyên viên xử lý âm thanh, hình ảnh, thiết kế các nội dung quảng cáo, thiết kế nhãn hiệu
+            sản phẩm, thiết kế logo; chuyên viên quản trị web, lắp đặt, bảo trì và sửa chữa máy tính, quản lý hệ thống
+            mạng; giảng viên dạy tại các trường đại học, cao đẳng, trung cấp, … đào tạo về Truyền thông đa phương tiện
+            và công nghệ thông tin.
+
+          </p>
+        </div>
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h3 class="featurette-heading fw-normal lh-1"><span class="text-danger">Nghiên cứu khoa học</span></h3>
+            <p class="lead">Hoạt động nghiên cứu khoa học của Bộ môn tập trung vào các lĩnh vực chính bao gồm hệ thống
+              hỗ trợ quyết định, máy học, mô phỏng, mô hình dự báo.</p>
+            <p><a class="btn btn-secondary" href="http://cit.ctu.edu.vn/training/ct_chuyendoi/K48/D_V2_7320104_TruyenThongDaPhuongTien.pdf">Xem thêm &raquo;</a></p>
+          </div>
+          <div class="col-md-5">
+            <img src="assets/img/z3951857850555_3709f7e51c324f758a5586867ea164c8.jpg" alt="." height="500px">
+          </div>
+        </div>
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h3 class="featurette-heading fw-normal lh-1"><span class="text-danger">Hợp tác</span></h3>
+            <p class="lead">Bộ môn rất chú trọng hợp tác và giữ mối liên hệ với quí Công ty, Doanh nghiệp công nghệ
+              thông tin và truyền thông bao gồm các doanh nghiệp không chuyên về công nghệ thông tin để chia sẻ và nhận
+              được hỗ trợ từ quí công ty, doanh nghiệp trong việc đào tạo kỹ năng nghề nghiệp và tạo cơ hội việc làm cho
+              sinh viên. Bộ môn luôn tìm kiếm sự hợp tác từ các các công ty, doanh nghiệp phần mềm nhằm nâng cao chất
+              lượng đào tạo, hợp tác nghiên cứu, chuyển giao các ứng dụng công nghệ.</p>
+            <p><a class="btn btn-secondary" href="http://cit.ctu.edu.vn/training/ct_chuyendoi/K48/D_V2_7320104_TruyenThongDaPhuongTien.pdf">Xem thêm &raquo;</a></p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img src="assets/img/z3951870505942_33f3354bee7debe80cc58df92cb986e6.jpg" alt="." height="500px">
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+  </main>
+
+  <footer>
+    <div class="footer-block text-white">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-5">
+            <div class="row row-cols-1 mt-5">
+              <h6 class="">Khoa Truyền Thông Đa Phương Tiện - Đại Học Cần Thơ</h6>
+              <div class="my-3">
+                <p class="text-justify">
+                  Khoa Truyền thông đa phương tiện là đơn vị chuyên môn thuộc Trường Đại học Công nghệ
+                  Thông tin và Truyền thông – Đại học Cần Thơ.
+                  <br>
+                  Hiện nay, Khoa phụ trách đào tạo ba ngành: Truyền thông đa phương tiện, Thiết kế đồ
+                  họa, Công nghệ truyền thông.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="row row-cols-1 mt-5">
+              <h6 class="">Dịch vụ tiện ích</h6>
+              <div class="text-decoration-none my-3">
+                <p>
+                  <a class="text-white text-decoration-none" href="#">Thư điện tử</a>
+                </p>
+                <p>
+                  <a class="text-white text-decoration-none" href="#">Hệ thống tích hợp</a>
+                </p>
+                <p>
+                  <a class="text-white text-decoration-none" href="#">Học trực tuyến</a>
+                </p>
+                <p>
+                  <a class="text-white text-decoration-none" href="#">Thi trực tuyến</a>
+                </p>
+                <p>
+                  <a class="text-white text-decoration-none" href="#">Lịch thực hành</a>
+                </p>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="row row-cols-1 mt-5">
+              <h6 class="">Công khai</h6>
+              <div class="text-decoration-none my-3">
+                <p>
+                  <a class="text-white text-decoration-none" href="#">Thông tư 36</a>
+                </p>
+                <p>
+                  <a class="text-white text-decoration-none" href="#">Tuyển dụng</a>
+                </p>
+                <p>
+                  <a class="text-white text-decoration-none" href="#">Tra cứu văn bằng</a>
+                </p>
+                <p>
+                  <a class="text-white text-decoration-none" href="#">Quy trình công tác</a>
+                </p>
+                <p>
+                  <a class="text-white text-decoration-none" href="#">Báo cáo thường niên</a>
+                </p>
+                <p>
+                  <a class="text-white text-decoration-none" href="#">Đề án mở ngành</a>
+                </p>
+              </div>
+
+
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="row row-cols-1 mt-5">
+              <h6 class="text-uppercase font-weight-bold">Liên hệ</h6>
+              <div class="text-decoration-none my-3 contact__block">
+                <p><i class="fas fa-home "></i>Khu 2, Đ. 3/2, P. Xuân Khánh, Q. Ninh Kiều, Tp. Cần Thơ
+                </p>
+                <p><i class="fas fa-envelope"></i>dhct@ctu.edu.vn</p>
+                <p><i class="fas fa-phone"></i>ĐT: +84292 3832 663</p>
+                <p><i class="fas fa-print"></i>Fax: +84292 3838 474</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <hr class="mt-2 mb-0">
+
+        <div class="row">
+          <div class="col">
+            <div class="py-3 text-end test d-flex justify-content-end me-0">
+              <a class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+                role="button">
+                <i class="fab fa-facebook-f mx-auto"></i>
+              </a>
+              <a class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+                role="button">
+                <i class="fab fa-twitter mx-auto"></i>
+              </a>
+              <a class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+                role="button">
+                <i class="fab fa-google mx-auto"></i>
+              </a>
+              <a class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+                role="button">
+                <i class="fab fa-instagram mx-auto"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/counterup.js"></script>
+  <script src="./assets/js/search.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+ADMIN:
+- Tài khoản: admin@cit.ctu.edu.vn
+- Mật khẩu: adminhihi
+- SĐT: 0908070605
+
+THIEN NHAN:
+- Tài khoản: nhan@cit.ctu.edu.vn
+- Mật khẩu: nhanhihi
+- SĐT: 0987654321

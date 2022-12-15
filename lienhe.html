@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/animate.css">
+    <link rel="stylesheet" href="./assets/css/nameafterlogin.css">
+    <link rel="icon" type="image/x-icon" href="./CTU.svg">
+    <title>CTU Multimedia</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-light pb-0">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/img/logo/logo.jpg" alt="Logo" style="width:250px;">
+                </a>
+
+
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0)"></a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav d-flex">
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://www.cit.ctu.edu.vn/">CIT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://elearning.ctu.edu.vn/">E-Learning</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://elcit.ctu.edu.vn/course/resources.php?id=1">Lịch thực hành</a>
+                        </li>
+
+                        <!--SEARCH-->
+                        <form class="me-2">
+                            <input class="form-control" type="search" placeholder="Tìm kiếm" list="timkiem" id="search"
+                                onchange="openSearch()" autocomplete="off">
+                            <datalist id="timkiem" class="find">
+                                <option value="Trang Chu"></option>
+                                <option value="Gioi Thieu"></option>
+                                <option value="Tin tuc"></option>
+                                <option value="Chuong trinh dai hoc"></option>
+                                <option value="Chuong trinh sau dai hoc"></option>
+                                <option value="Chuong trinh vua lam vua hoc"></option>
+                                <option value="Tuyen sinh dai hoc"></option>
+                                <option value="Tuyen sinh sau dai hoc"></option>
+                                <option value="Tuyen sinh vua lam vua hoc"></option>
+                                <option value="Quy che tuyen sinh"></option>
+                                <option value="Nghien cuu"></option>
+                                <option value="Tap chi khoa hoc"></option>
+                                <option value="Bo mon Tin hoc ung dung"></option>
+                                <option value="Bo mon Truyen thong da phuong tien"></option>
+                                <option value="Bo mon Cong nghe truyen thong"></option>
+                                <option value="Lien he"></option>
+                            </datalist>
+                        </form>
+
+                        <!--NUT DANG NHAP-->
+                        <div class="text-end">
+                            <a href="./login.html" class="btn btn-primary me-2" role="button" id="login-index">Đăng
+                                nhập</a>
+                            <!-- THEM TEN SAU KHI LOGIN -->
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" id="exit-submenu">
+                                <li class="nav-item dropdown">
+                                    <a id="drop-icon" class="nav-link dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span id="full-name"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="profile.html">Hồ sơ cá nhân</a></li>
+                                        <hr style="margin: 1px">
+                                        <li><a class="dropdown-item" href="admin.html">Bài viết</a></li>
+                                        <li><a class="dropdown-item" href="changepw.html">Đổi mật khẩu</a></li>
+                                        <hr style="margin: 1px">
+                                        <li><a class="dropdown-item" href="index.html" id="exit-index">Đăng xuất</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                    </ul>
+                </div>
+                <!--KET THUC NUT DANG NHAP-->
+
+            </div>
+        </nav>
+
+        <div class="main__menu-block"></div>
+        <div class="navbar navbar-expand-sm navbar-light bg-light pt-0">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <div class="navbar navbar-expand-sm navbar-dark main__menu-block" id="mymenu">
+            <div class="container">
+
+                <div class="collapse navbar-collapse" id="mynavbar">
+                    <!-- Links -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="gioithieu.html">Giới thiệu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="listNews.html">Tin tức</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link active dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown">Đào
+                                tạo</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="daotao.html">Chương trình đại học</a></li>
+                                <li><a class="dropdown-item" href="daotaosau.html">Chương trình sau đại học</a></li>
+                                <li><a class="dropdown-item" href="vualamvuahoc.html">Chương trình vừa làm vừa
+                                        học</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link active dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown">Tuyển sinh</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="tuyensinh.html">Đại học</a></li>
+                                <li><a class="dropdown-item" href="tuyensinhsau.html">Sau đại học</a></li>
+                                <li><a class="dropdown-item" href="tuyensinhvlvh.html">Vừa làm vừa học</a></li>
+                                <li><a class="dropdown-item" href="quychetuyensinh.html">Quy chế tuyển sinh</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link active dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown">Nghiên cứu</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="nghiencuu.html">Các đề tài NCKH</a></li>
+                                <li><a class="dropdown-item" href="tapchi.html">Tạp chí khoa học</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link active dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown">Đơn
+                                vị</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="donvi1.html">Bộ môn Tin học ứng dụng</a></li>
+                                <li><a class="dropdown-item" href="donvi2.html">Bộ môn Truyền thông đa phương
+                                        tiện</a>
+                                </li>
+                                <li><a class="dropdown-item" href="donvi3.html">Bộ môn Công nghệ truyền thông</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="lienhe.html">Liên hệ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </header>
+
+
+    <main>
+        <div class="main__block bg-light">
+            <!-- Slider -->
+            <div class="slider">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="2000">
+                            <img src="./assets/img/banner/banner-web-hithaocngon.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <img src="./assets/img/banner/Banner-Web_AUN-QA_302.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <img src="./assets/img/banner/tuyendung2022d2.png" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <h1 class="section-title" style="text-align: center;"><span class="text-primary">Liên Hệ</span></h1>
+                </div>
+                <section>
+                    <div class="row">
+                        <div class="col-11 mx-auto">
+                            <div class="row">
+                                <div class="col-4 detail">
+                                    <img src="assets/img/logo/logo.jpg" alt="" width="260px"
+                                        style="margin: -40px 0 -40px;">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <div class="p-3 boder bg-success">
+                                        <section>
+                                            <p><span><i class="fas fa-map-marked-alt"
+                                                        style="color:coral;"></i></span>Khu II, đường 3 tháng 2, Xuân
+                                                Khánh, Ninh Kiều, Cần Thơ</p>
+                                        </section>
+                                        <section>
+                                            <p><span><i class="fas fa-phone" style="color:coral;"></i></span>84 0292 3
+                                                734713 - 0292 3 831301</p>
+                                        </section>
+                                        <section>
+                                            <p><span><i class="fas fa-envelope" style="color:coral;"></i></span>
+                                                office@cit.ctu.edu.vn</p>
+                                        </section>
+                                        <section>
+                                            <p><span><i class="fas bi-clock" style="color:coral;"></i></span>Mở cửa
+                                                7h-19h</p>
+                                        </section>
+                                    </div>
+                                    <div class="row featurette">
+                                        <div class="col-md-5 order-md-1">
+                                            <img src="assets/img/39799745.jpg" alt="." height="287px">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-7">
+                                    <section id="register-form">
+                                        <!--Title-->
+                                        <h2 class="section-heading mb-4 h2"></h2>
+                                        <!-- Description -->
+                                        <p></p>
+                                        <!--Grid row-->
+                                        <div class="row">
+                                            <!--Grid column-->
+                                            <div class="col mb-4">
+                                                <!--Title-->
+                                                <h3 class="secondary-heading mb-3"></h3>
+                                                <!--Section: Live preview-->
+                                                <div class="p-3 boder bg-info">
+                                                    <section>
+                                                        <!-- Default form register -->
+                                                        <form
+                                                            class="text-center border border-warning px-3 needs-validation"
+                                                            onsubmit="return frmTest(this)">
+                                                            <p class="h4 mb-4"></p>
+                                                            <div class="form-row mb-4">
+                                                                <div class="col">
+                                                                    <!-- Last name -->
+                                                                    <input type="text" id="defaultRegisterFormLastName"
+                                                                        class="form-control" name="lname"
+                                                                        placeholder="Họ">
+                                                                </div>
+                                                                <br>
+                                                                <div class="col">
+                                                                    <!-- First name -->
+                                                                    <input type="text" id="defaultRegisterFormFirstName"
+                                                                        class="form-control" name="name"
+                                                                        placeholder="Tên">
+                                                                </div>
+                                                            </div>
+                                                            <!-- E-mail -->
+                                                            <input type="email" id="defaultRegisterFormEmail"
+                                                                class="form-control mb-4" name="email"
+                                                                placeholder="E-mail liên hệ">
+
+                                                            <!-- Phone number -->
+                                                            <input type="text" id="defaultRegisterPhonePassword"
+                                                                class="form-control" name="phone"
+                                                                placeholder="Phone number"
+                                                                aria-describedby="defaultRegisterFormPhoneHelpBlock">
+                                                            <br>
+
+                                                            <div class="mb-3">
+                                                                <select class="form-control form-select"
+                                                                    name="calc_shipping_provinces" required>
+                                                                    <option value="">Tỉnh / Thành phố</option>
+                                                                    <option value="1">An Giang</option>
+                                                                    <option value="2">Bà Rịa - Vũng Tàu</option>
+                                                                    <option value="3">Bạc Liêu</option>
+                                                                    <option value="4">Bắc Kạn</option>
+                                                                    <option value="5">Bắc Giang</option>
+                                                                    <option value="6">Bắc Ninh</option>
+                                                                    <option value="7">Bến Tre</option>
+                                                                    <option value="8">Bình Dương</option>
+                                                                    <option value="9">Bình Định</option>
+                                                                    <option value="10">Bình Phước</option>
+                                                                    <option value="11">Bình Thuận</option>
+                                                                    <option value="12">Cà Mau</option>
+                                                                    <option value="13">Cao Bằng</option>
+                                                                    <option value="14">Cần Thơ</option>
+                                                                    <option value="15">Đà Nẵng</option>
+                                                                    <option value="16">Đắk Lắk</option>
+                                                                    <option value="17">Đắk Nông</option>
+                                                                    <option value="18">Đồng Nai</option>
+                                                                    <option value="19">Đồng Tháp</option>
+                                                                    <option value="20">Điện Biên</option>
+                                                                    <option value="21">Gia Lai</option>
+                                                                    <option value="22">Hà Giang</option>
+                                                                    <option value="23">Hà Nam</option>
+                                                                    <option value="24">Hà Nội</option>
+                                                                    <option value="25">Hà Tĩnh</option>
+                                                                    <option value="26">Hải Dương</option>
+                                                                    <option value="27">Hải Phòng</option>
+                                                                    <option value="28">Hòa Bình</option>
+                                                                    <option value="29">Hậu Giang</option>
+                                                                    <option value="30">Hưng Yên</option>
+                                                                    <option value="31">Thành phố Hồ Chí Minh</option>
+                                                                    <option value="32">Khánh Hòa</option>
+                                                                    <option value="33">Kiên Giang</option>
+                                                                    <option value="34">Kon Tum</option>
+                                                                    <option value="35">Lai Châu</option>
+                                                                    <option value="36">Lào Cai</option>
+                                                                    <option value="37">Lạng Sơn</option>
+                                                                    <option value="38">Lâm Đồng</option>
+                                                                    <option value="39">Long An</option>
+                                                                    <option value="40">Nam Định</option>
+                                                                    <option value="41">Nghệ An</option>
+                                                                    <option value="42">Ninh Bình</option>
+                                                                    <option value="43">Ninh Thuận</option>
+                                                                    <option value="44">Phú Thọ</option>
+                                                                    <option value="45">Phú Yên</option>
+                                                                    <option value="46">Quảng Bình</option>
+                                                                    <option value="47">Quảng Nam</option>
+                                                                    <option value="48">Quảng Ngãi</option>
+                                                                    <option value="49">Quảng Ninh</option>
+                                                                    <option value="50">Quảng Trị</option>
+                                                                    <option value="51">Sóc Trăng</option>
+                                                                    <option value="52">Sơn La</option>
+                                                                    <option value="53">Tây Ninh</option>
+                                                                    <option value="54">Thái Bình</option>
+                                                                    <option value="55">Thái Nguyên</option>
+                                                                    <option value="56">Thanh Hóa</option>
+                                                                    <option value="57">Thừa Thiên - Huế</option>
+                                                                    <option value="58">Tiền Giang</option>
+                                                                    <option value="59">Trà Vinh</option>
+                                                                    <option value="60">Tuyên Quang</option>
+                                                                    <option value="61">Vĩnh Long</option>
+                                                                    <option value="62">Vĩnh Phúc</option>
+                                                                    <option value="63">Yên Bái</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <textarea class="form-control mb-4" name="message" id=""
+                                                                    cols="30" rows="5" placeholder="Ghi Chú"></textarea>
+                                                            </div>
+                                                            <!-- Newsletter -->
+
+                                                            <!-- Sign up button -->
+                                                            <button
+                                                                class="btn btn-warning my-4 btn-block waves-effect waves-light"
+                                                                type="submit">Gửi</button>
+                                                            <button
+                                                                class="btn btn-warning my-4 btn-block waves-effect waves-light"
+                                                                type="reset">Xóa</button>
+                                                        </form>
+                                                    </section>
+                                                </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="container-fluid">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3486.9839066573486!2d105.76876741711322!3d10.030415773994152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1670592328391!5m2!1svi!2s"
+                    width="1500" height="550" style="border:0;" allowfullscrenn="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <hr>
+                </section>
+            </div>
+
+            <!-- Back to Top -->
+            <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            <!-- Back to Top -->
+
+    </main>
+
+    <footer>
+        <div class="footer-block text-white">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="row row-cols-1 mt-5">
+                            <h6 class="">Khoa Truyền Thông Đa Phương Tiện - Đại Học Cần Thơ</h6>
+                            <div class="my-3">
+                                <p class="text-justify">
+                                    Khoa Truyền thông đa phương tiện là đơn vị chuyên môn thuộc Trường Đại học Công nghệ
+                                    Thông tin và Truyền thông – Đại học Cần Thơ.
+                                    <br>
+                                    Hiện nay, Khoa phụ trách đào tạo ba ngành: Truyền thông đa phương tiện, Thiết kế đồ
+                                    họa, Công nghệ truyền thông.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="row row-cols-1 mt-5">
+                            <h6 class="">Dịch vụ tiện ích</h6>
+                            <div class="text-decoration-none my-3">
+                                <p>
+                                    <a class="text-white text-decoration-none" href="#">Thư điện tử</a>
+                                </p>
+                                <p>
+                                    <a class="text-white text-decoration-none" href="#">Hệ thống tích hợp</a>
+                                </p>
+                                <p>
+                                    <a class="text-white text-decoration-none" href="#">Học trực tuyến</a>
+                                </p>
+                                <p>
+                                    <a class="text-white text-decoration-none" href="#">Thi trực tuyến</a>
+                                </p>
+                                <p>
+                                    <a class="text-white text-decoration-none" href="#">Lịch thực hành</a>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="row row-cols-1 mt-5">
+                            <h6 class="">Công khai</h6>
+                            <div class="text-decoration-none my-3">
+                                <p>
+                                    <a class="text-white text-decoration-none" href="#">Thông tư 36</a>
+                                </p>
+                                <p>
+                                    <a class="text-white text-decoration-none" href="#">Tuyển dụng</a>
+                                </p>
+                                <p>
+                                    <a class="text-white text-decoration-none" href="#">Tra cứu văn bằng</a>
+                                </p>
+                                <p>
+                                    <a class="text-white text-decoration-none" href="#">Quy trình công tác</a>
+                                </p>
+                                <p>
+                                    <a class="text-white text-decoration-none" href="#">Báo cáo thường niên</a>
+                                </p>
+                                <p>
+                                    <a class="text-white text-decoration-none" href="#">Đề án mở ngành</a>
+                                </p>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="row row-cols-1 mt-5">
+                            <h6 class="text-uppercase font-weight-bold">Liên hệ</h6>
+                            <div class="text-decoration-none my-3 contact__block">
+                                <p><i class="fas fa-home "></i>Khu 2, Đ. 3/2, P. Xuân Khánh, Q. Ninh Kiều, Tp. Cần Thơ
+                                </p>
+                                <p><i class="fas fa-envelope"></i>dhct@ctu.edu.vn</p>
+                                <p><i class="fas fa-phone"></i>ĐT: +84292 3832 663</p>
+                                <p><i class="fas fa-print"></i>Fax: +84292 3838 474</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <hr class="mt-2 mb-0">
+
+                <div class="row">
+                    <div class="col">
+                        <div class="py-3 text-end test d-flex justify-content-end me-0">
+                            <a class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+                                role="button">
+                                <i class="fab fa-facebook-f mx-auto"></i>
+                            </a>
+                            <a class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+                                role="button">
+                                <i class="fab fa-twitter mx-auto"></i>
+                            </a>
+                            <a class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+                                role="button">
+                                <i class="fab fa-google mx-auto"></i>
+                            </a>
+                            <a class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+                                role="button">
+                                <i class="fab fa-instagram mx-auto"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/counterup.js"></script>
+    <script src="./assets/js/lienhe.js"></script>
+    <script src="./assets/js/search.js"></script>
+</body>
+
+</html>

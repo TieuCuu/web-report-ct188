@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/png" href="assets/img/logo/favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./assets/css_admin/main.css">
+  <link rel="stylesheet" href="./assets/css/nameafterlogin.css">
+  <link rel="icon" type="image/x-icon" href="./CTU.svg">
+  <title>CTU Multimedia</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light pb-0">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/img/logo/logo.jpg" alt="Logo" style="width:250px;">
+        </a>
+
+        <div class="navbar-collapse">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)"></a>
+            </li>
+          </ul>
+          <ul class="navbar-nav d-flex">
+            <li class="nav-item">
+              <a class="nav-link" href="http://www.cit.ctu.edu.vn/">CIT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://elearning.ctu.edu.vn/">E-Learning</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://elcit.ctu.edu.vn/course/resources.php?id=1">Lịch thực hành</a>
+            </li>
+
+            <!--SEARCH-->
+            <form class="me-2">
+              <input class="form-control" type="search" placeholder="Tìm kiếm" list="timkiem" id="search"
+                onchange="openSearch()" autocomplete="off">
+              <datalist id="timkiem" class="find">
+                <option value="Trang Chu"></option>
+                <option value="Gioi Thieu"></option>
+                <option value="Tin tuc"></option>
+                <option value="Chuong trinh dai hoc"></option>
+                <option value="Chuong trinh sau dai hoc"></option>
+                <option value="Chuong trinh vua lam vua hoc"></option>
+                <option value="Tuyen sinh dai hoc"></option>
+                <option value="Tuyen sinh sau dai hoc"></option>
+                <option value="Tuyen sinh vua lam vua hoc"></option>
+                <option value="Quy che tuyen sinh"></option>
+                <option value="Nghien cuu"></option>
+                <option value="Tap chi khoa hoc"></option>
+                <option value="Bo mon Tin hoc ung dung"></option>
+                <option value="Bo mon Truyen thong da phuong tien"></option>
+                <option value="Bo mon Cong nghe truyen thong"></option>
+                <option value="Lien he"></option>
+              </datalist>
+            </form>
+
+            <!--NUT DANG NHAP-->
+            <div class="text-end">
+
+              <!-- THEM TEN SAU KHI LOGIN -->
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" id="exit-submenu" style="display: none;">
+                <li class="nav-item dropdown">
+                  <a id="drop-icon" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false" style="display: block;">
+                    <span id="full-name">Thien Nhan</span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="profile.html">Hồ sơ cá nhân</a></li>
+                    <hr style="margin: 1px">
+                    <li><a class="dropdown-item" href="admin.html">Bài viết</a></li>
+                    <li><a class="dropdown-item" href="changepw.html">Đổi mật khẩu</a></li>
+                    <hr style="margin: 1px">
+                    <li><a class="dropdown-item" href="#" id="exit-index">Đăng xuất</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+              <a href="./login.html" class="btn btn-primary me-2" role="button" id="login-index"
+                style="display: block;">Đăng
+                nhập</a>
+            </div>
+          </ul>
+        </div>
+        <!--KET THUC NUT DANG NHAP-->
+
+      </div>
+    </nav>
+
+    <div class="main__menu-block"></div>
+    <div class="navbar navbar-expand-sm navbar-light bg-light pt-0 ms-2">
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar"
+        aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <div class="navbar navbar-expand-sm navbar-dark main__menu-block" id="mymenu">
+      <div class="container">
+
+        <div class="navbar-collapse collapse" id="mynavbar">
+          <!-- Links -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Trang chủ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="gioithieu.html">Giới thiệu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="listNews.html">Tin tức</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Đào
+                tạo</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="daotao.html">Chương trình đại học</a></li>
+                <li><a class="dropdown-item" href="daotaosau.html">Chương trình sau đại học</a></li>
+                <li><a class="dropdown-item" href="vualamvuahoc.html">Chương trình vừa làm vừa học</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Tuyển
+                sinh</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="tuyensinh.html">Đại học</a></li>
+                <li><a class="dropdown-item" href="tuyensinhsau.html">Sau đại học</a></li>
+                <li><a class="dropdown-item" href="tuyensinhvlvh.html">Vừa làm vừa học</a></li>
+                <li><a class="dropdown-item" href="quychetuyensinh.html">Quy chế tuyển sinh</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Nghiên
+                cứu</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="nghiencuu.html">Các đề tài NCKH</a></li>
+                <li><a class="dropdown-item" href="tapchi.html">Tạp chí khoa học</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Đơn
+                vị</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="donvi1.html">Bộ môn Tin học ứng dụng</a></li>
+                <li><a class="dropdown-item" href="donvi2.html">Bộ môn Truyền thông đa phương tiện</a>
+                </li>
+                <li><a class="dropdown-item" href="donvi3.html">Bộ môn Công nghệ truyền thông</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="lienhe.html">Liên hệ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="main__block bg-light">
+      <!-- Slider -->
+      <div class="slider">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="1000">
+              <img src="./assets/img/banner/banner-web-hithaocngon.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="./assets/img/banner/Banner-Web_AUN-QA_302.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="./assets/img/banner/tuyendung2022d2.png" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Present -->
+      <div class="present container mt-2">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb mt-4">
+          <div
+            style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+            aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a class="text-muted text-decoration-none" href="index.html">Trang chủ</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">Tin tức</li>
+            </ol>
+          </div>
+        </div>
+
+        <h2 class="pb-3 border-bottom text-center">TIN TỨC MỚI NHẤT</h2>
+
+        <!-- News -->
+        <div class="main__news mt-5">
+          <div class="row row-cols-4" id="list-posts">
+            <!-- <div id="list-posts">
+
+                        </div> -->
+            <!-- <div class="col my-3">
+                            <div class="card news__item" >
+                                <div class="news__item-img-block">
+                                    <img src="" class="card-img-top news__item-img" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"></h5>
+                                    <p class="card-text news__item-desc"></p>
+                                    <p class="card-text"><small class="text-muted"></small></p>
+                                    <a href="" class=""></a>
+                                </div>
+                            </div>
+                        </div> -->
+
+          </div>
+        </div>
+
+        <div class="main__pagination">
+          <div class="row">
+            <div class="col-12">
+              <div class="main__pagination d-flex justify-content-center my-4">
+                <ul class="pagination pagination-lg">
+                  <!-- <li class="page-item">
+                                        <div class="page-link btn-prev" href="" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </div>
+                                    </li>
+                                    <div id="number-page" class="pagination pagination-lg">
+                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">...</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">76</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">77</a></li>
+                                    </div>
+                                    <li class="page-item">
+                                        <div class="page-link btn-next" href="" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </div>
+                                    </li> -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Back to top -->
+      <button type="button" class="btn btn-danger btn-floating btn-lg rounded-circle" id="btn-back-to-top">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </div>
+
+
+
+  </main>
+
+  <footer>
+    <div class="footer-block text-white">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-5">
+            <div class="row row-cols-1 mt-5">
+              <h6 class="">Khoa Truyền Thông Đa Phương Tiện - Đại Học Cần Thơ</h6>
+              <div class="my-3">
+                <p class="text-justify">
+                  Khoa Truyền thông đa phương tiện là đơn vị chuyên môn thuộc Trường Đại học Công nghệ Thông tin và
+                  Truyền thông – Đại học Cần Thơ.
+                  <br>
+                  Hiện nay, Khoa phụ trách đào tạo ba ngành: Truyền thông đa phương tiện, Thiết kế đồ họa, Công nghệ
+                  truyền thông.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="row row-cols-1 mt-5">
+              <h6 class="">Dịch vụ tiện ích</h6>
+              <div class="text-decoration-none my-3">
+                <p>
+                  <a class="text-white text-decoration-none" href="#">Thư điện tử</a>
+                </p>
+                <p>
+                  <a class="text-white text-decoration-none" href="#">Hệ thống tích hợp</a>
+                </p>
+                <p>
+                  <a class="text-white text-decoration-none" href="#">Học trực tuyến</a>
+                </p>
+                <p>
+                  <a class="text-white text-decoration-none" href="#">Thi trực tuyến</a>
+                </p>
+                <p>
+                  <a class="text-white text-decoration-none" href="#">Lịch thực hành</a>
+                </p>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="row row-cols-1 mt-5">
+              <h6 class="">Công khai</h6>
+              <div class="text-decoration-none my-3">
+                <p>
+                  <a class="text-white text-decoration-none" href="#">Thông tư 36</a>
+                </p>
+                <p>
+                  <a class="text-white text-decoration-none" href="#">Tuyển dụng</a>
+                </p>
+                <p>
+                  <a class="text-white text-decoration-none" href="#">Tra cứu văn bằng</a>
+                </p>
+                <p>
+                  <a class="text-white text-decoration-none" href="#">Quy trình công tác</a>
+                </p>
+                <p>
+                  <a class="text-white text-decoration-none" href="#">Báo cáo thường niên</a>
+                </p>
+                <p>
+                  <a class="text-white text-decoration-none" href="#">Đề án mở ngành</a>
+                </p>
+              </div>
+
+
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="row row-cols-1 mt-5">
+              <h6 class="text-uppercase font-weight-bold">Liên hệ</h6>
+              <div class="text-decoration-none my-3 contact__block">
+                <p><i class="fas fa-home "></i>Khu 2, Đ. 3/2, P. Xuân Khánh, Q. Ninh Kiều, Tp. Cần Thơ</p>
+                <p><i class="fas fa-envelope"></i>dhct@ctu.edu.vn</p>
+                <p><i class="fas fa-phone"></i>ĐT: +84292 3832 663</p>
+                <p><i class="fas fa-print"></i>Fax: +84292 3838 474</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <hr class="mt-2 mb-0">
+
+        <div class="row">
+          <div class="col">
+            <div class="py-3 text-end social-block d-flex justify-content-end me-0">
+              <a class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+                role="button">
+                <i class="fab fa-facebook-f mx-auto"></i>
+              </a>
+              <a class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+                role="button">
+                <i class="fab fa-twitter mx-auto"></i>
+              </a>
+              <a class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+                role="button">
+                <i class="fab fa-google mx-auto"></i>
+              </a>
+              <a class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+                role="button">
+                <i class="fab fa-instagram mx-auto"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="./assets/js_admin/listNews.js"></script>
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/search.js"></script>
+</body>
+
+</html>

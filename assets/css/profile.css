@@ -1,0 +1,24 @@
+#drop-icon {
+    display: none;
+}
+
+#full-name {
+    font-weight: bold;
+    font-size: 16pt;
+    color: #060ea4;
+}
+
+.student-profile .card .card-header .profile_img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 10px auto;
+    border: 10px solid #ccc;
+    border-radius: 50%;
+}
+#nckh-nhan{
+    display: none;
+}
+#nckh-admin{
+    display: none;
+}

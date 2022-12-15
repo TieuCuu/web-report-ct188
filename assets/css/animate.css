@@ -1,0 +1,191 @@
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+
+  /* Bump up size of carousel content */
+  .featurette-heading {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+body {
+  display: grid;
+  position: relative;
+  grid-template-areas: 'header-cell'
+    'nav-cell'
+    'main-cell'
+    'footer-cell';
+}
+
+.main__menu-block{
+  grid-area: nav-cell;
+}
+
+
+.text-shadow-1 {
+  text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25);
+}
+
+.card{
+  transition: all 0.2s ease-in-out;
+}
+
+.card-cover {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: #0b61ae;
+  border-color: #0a589d;
+}
+
+.btn-secondary:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #3966ef;
+}
+
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* rtl:begin:ignore */
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+
+/* rtl:end:ignore */
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 3rem 0;
+}
+
+.featurette-heading {
+  letter-spacing: -.05rem;
+}
+
+.display-4 {
+  font-weight: 650;
+}
+
+.accordion-button {
+  width: 400px;
+}
+
+.accordion-item1 {
+  border: none;
+}
+
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background-color: gold;
+  border-color: gold;
+}
+
+.carousel-item {
+  transition: 2s;
+  animation: infinite;
+}
+
+/* counterUp */
+@property --num {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: true;
+}
+
+#counter-up::after {
+  content: counter(num);
+}
+
+#counter-up1::after {
+  content: counter(num);
+}
+
+#counter-up {
+  animation: counter 9s forwards alternate ease-in-out;
+  counter-reset: num var(--num);
+}
+
+@keyframes counter {
+  from {
+    --num: 0;
+  }
+
+  to {
+    --num: 1234;
+  }
+}
+
+#counter-up1 {
+  animation: counter1 10s forwards alternate ease-in-out;
+  counter-reset: num var(--num);
+}
+
+@keyframes counter1 {
+  from {
+    --num: 0;
+  }
+
+  to {
+    --num: 14230;
+  }
+}
+
+.turnleft {
+  border: none;
+  background-color: transparent;
+  margin-left: 90px;
+  font-size: 25pt;
+}
+
+.turnright {
+  border: none;
+  background-color: transparent;
+  margin-left: 1000px;
+  font-size: 25pt;
+}
+
+a {
+  text-decoration: none;
+}
+
+.turnright:hover {
+  cursor: pointer;
+  color: #f5bb26;
+}
+
+.turnleft:hover {
+  cursor: pointer;
+  color: #f5bb26;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+}
+
+/*** Facts ***/
+.facts {
+  background: linear-gradient(rgba(28, 83, 178, 0.95), rgba(85, 127, 231, 0.95)), url(../img/bg.png);
+}
+
